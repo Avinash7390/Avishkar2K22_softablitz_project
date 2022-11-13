@@ -309,11 +309,14 @@ public class control {
                 part2="0";
             }
             int num=Integer.parseInt(part2);
+         if(num==0){
+            txtDisplay.setText("Undefined");
+         }else{
             double radiuns=Math.toRadians(num);
             result=Math.tan(radiuns);
             txtDisplay.setText(result.toString());
-        }
-        else if(newText.contains("cot")){
+             }
+         }else if(newText.contains("cot")){
             String[] parts=newText.split("t");
            String part2=parts[1];
 //            if(part2=="π"){
@@ -348,6 +351,8 @@ public class control {
             double rev=Math.cos(radiuns);
             result=1/rev;
             txtDisplay.setText(result.toString());
+        }else if(newText.contains("/0"){
+            txtDisplay.setText("can't calculate);
         }else if(newText.contains("+")||newText.contains("-")||newText.contains("X")||newText.contains("/")){
             result=EV.evaluate(newText);
             txtDisplay.setText(result.toString());
